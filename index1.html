@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="style1.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tax Calculator</h1>
+      <form id="taxForm">
+        <div class="form-group">
+          <div class="input-label">
+            <label for="income">Gross Annual Income (₹)</label>
+            <div class="tooltip">
+              <span class="tooltipIcon">?</span>
+              <span class="tooltiptext">Gross annual income is your total salary in a year before any deductions</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <input type="text" id="income" name="income" />
+            <span class="error-icon" id="incomeErrorIcon" title="Enter a valid income amount">!</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-label">
+            <label for="extraIncome">Extra Income (if any) (₹)</label>
+            <div class="tooltip">
+              <span class="tooltipIcon">?</span>
+              <span class="tooltiptext"> Extra income is any additional income you earn apart from your salary </span>
+            </div>
+          </div>
+          <div class="input-group">
+            <input type="text" id="extraIncome" name="extraIncome" />
+            <span class="error-icon" id="extraIncomeErrorIcon" title="Enter a valid extra income amount">!</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-label">
+            <label for="age">Age</label>
+            <div class="tooltip">
+              <span class="tooltipIcon">?</span>
+              <span class="tooltiptext"> Age group is used to calculate tax deductions based on your age </span>
+            </div>
+          </div>
+          <div class="input-group">
+            <select id="age" name="age">
+              <option value="" disabled selected>Select Age Group</option>
+              <option value="below-40">Below 40</option>
+              <option value="40-to-59">40 to 59</option>
+              <option value="60-plus">60 and Above</option>
+            </select>
+            <span class="error-icon" id="ageErrorIcon" title="Age is ">!</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-label">
+            <label for="deductions">Deductions (₹)</label>
+            <div class="tooltip">
+              <span class="tooltipIcon">?</span>
+              <span class="tooltiptext">
+                Deductions are expenses that can be subtracted from your total income to reduce the amount of income
+                that is subject to tax
+              </span>
+            </div>
+          </div>
+          <div class="input-group">
+            <input type="text" id="deductions" name="deductions" />
+            <span class="error-icon" id="deductionsErrorIcon" title="Enter a valid deduction amount">!</span>
+          </div>
+        </div>
+        <button type="submit">Calculate Tax</button>
+      </form>
+    </div>
+    <div class="modal" id="resultModal">
+      <div class="modal-content">
+        <div class="tax-content">
+          <p class="taxHeader">Your Overall Income will be</p>
+          <p id="taxResult"></p>
+          <p id="taxNote">after tax deductions</p>
+        </div>
+        <button class="button" id="closeModal">Close</button>
+      </div>
+    </div>
+    <script src="script1.js"></script>
+  </body>
+</html>
